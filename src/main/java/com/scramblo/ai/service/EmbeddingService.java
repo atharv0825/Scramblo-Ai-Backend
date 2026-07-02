@@ -1,6 +1,7 @@
 package com.scramblo.ai.service;
 
 import com.google.genai.Client;
+import com.google.genai.types.EmbedContentConfig;
 import com.google.genai.types.EmbedContentResponse;
 import com.scramblo.ai.dto.ArticlePublishedEvent;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,9 @@ public class EmbeddingService {
                 client.models.embedContent(
                         "gemini-embedding-001",
                         text,
-                        null
+                        EmbedContentConfig.builder()
+                                .outputDimensionality(768)
+                                .build()
                 );
 
         var embeddings = response.embeddings()
