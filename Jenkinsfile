@@ -20,7 +20,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/atharv0825/Scramblo-AI.git'
+                    url: 'https://github.com/atharv0825/Scramblo-Ai-Backend.git'
             }
         }
 
