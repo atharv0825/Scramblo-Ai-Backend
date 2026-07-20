@@ -32,3 +32,33 @@ spring:
 gemini:
   api:
     key: ${GEMINI_API_KEY}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+
+  info:
+    env:
+      enabled: true
+
+  metrics:
+    tags:
+      application: scramblo
+
+  health:
+    redis:
+      enabled: true
+    db:
+      enabled: true
+
+info:
+  app:
+    name: Scramblo-ai
+    version: 1.0.0
+    description: Social Media Platform Backend
